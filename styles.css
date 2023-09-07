@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: rgba(4, 162, 255, 0.4);
+}
+div {
+    position: absolute;
+}
+canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0 7px 7px #818181;
+}
