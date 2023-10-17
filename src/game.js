@@ -1,4 +1,30 @@
-"use strict";
+class Game {
+    #canvas;
+    #context;
+    #nativeWidth;
+    #nativeHeight;
+    #minScale;
+    #maxScale;
+    #scaleWidth;
+    #scaleHeight;
+    #mouse;
+    #keyboard;
+    #delta;
+    #spriteSheet;
+    constructor(canvas, nativeWidth, nativeHeight, minScale, maxScale, imagePath) {
+        this.#canvas = canvas;
+        this.#context = canvas.getContext("2d");
+        this.#nativeWidth = nativeWidth;
+        this.#nativeHeight = nativeHeight;
+        this.#minScale = minScale;
+        this.#maxScale = maxScale;
+        this.#scaleWidth = undefined;
+        this.#scaleHeight = undefined;
+        this.#mouse = new Mouse();
+        this.#keyboard = new Keyboard();
+        this.#delta = 1 / 60;
+    }
+}
 
 function Game(canvas, nativeWidth, nativeHeight, minScale, maxScale, imagePath) {
     this._canvas = canvas;
@@ -16,7 +42,8 @@ function Game(canvas, nativeWidth, nativeHeight, minScale, maxScale, imagePath) 
     window.onresize = this._resizeHandler.bind(this);
     this._resizeHandler();
     this._initSpriteSheet(this._spriteSheet);
-    this.sprite = new Button(this._spriteSheet.image, this._spriteSheet.getSrcRect("bigButton"), new Vector2(50, 50), "test", 1);
+    this.sprite = new Button(this._spriteSheet.image, this._spriteSheet.getSrcRect("mainMenuBackground"), new Vector2(0, 0));
+    this.gameLoop();
 }
 Object.defineProperties(Game.prototype, {
     _resizeHandler: {
