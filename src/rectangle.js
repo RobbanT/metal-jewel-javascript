@@ -1,3 +1,5 @@
+"use strict";
+
 class Rectangle extends Vector2 {
     #width;
     #height;

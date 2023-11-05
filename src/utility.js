@@ -1,3 +1,5 @@
+"use strict";
+
 class Utility {
     static clampMin(num, minNum) {
         return num < minNum ? minNum : num;
