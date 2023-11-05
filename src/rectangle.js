@@ -9,19 +9,19 @@ class Rectangle extends Vector2 {
     }
 
     get width() {
-        return (this.#width = width);
-    }
-
-    get height() {
-        return (this.#height = height);
-    }
-
-    set width(width) {
         return this.#width;
     }
 
-    set height(height) {
+    get height() {
         return this.#height;
+    }
+
+    set width(width) {
+        this.#width = width;
+    }
+
+    set height(height) {
+        this.#height = height;
     }
 
     top() {

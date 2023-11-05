@@ -14,11 +14,11 @@ class Utility {
         return clampNum;
     }
 
-    static save(name, value) {
+    static saveToLocalStorage(name, value) {
         localStorage.setItem(name, value);
     }
 
-    static read(name) {
+    static readFromLocalStorage(name) {
         return localStorage.getItem(name);
     }
 }
