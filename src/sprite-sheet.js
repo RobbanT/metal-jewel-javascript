@@ -2,6 +2,7 @@ class SpriteSheet {
     #image;
     #isLoaded;
     #srcRects;
+    
     constructor(imagePath) {
         this.#image = new Image();
         this.#isLoaded = false;

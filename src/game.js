@@ -1,7 +1,51 @@
 class Game {
     #canvas;
     #context;
-    #nativeWidth;
+    #delta;
+
+    constructor(canvas) {
+        this.#canvas = canvas;
+        this.#context = canvas.getContext("2d");
+        this.#delta = 1000 / 60;
+        this.#runGameLoop;
+    }
+
+    #clearCanvas() {
+        this.#context.clearRect(0, 0, this.#canvas.width, this.#canvas.height);
+    }
+
+    #update() {}
+
+    #draw() {}
+
+    #runGameLoop() {
+        this.#clearCanvas();
+        this.#update();
+        this.#draw();
+        window.setTimeout(runGameLoop, this.#delta);
+    }
+}
+
+/* new Game(document.getElementsByTagName("canvas").item(0), 564, 406, 1, 1, "../res/sprite-sheet.png");*/
+/* constructor(canvas, nativeWidth, nativeHeight, minScale, maxScale, imagePath) {
+        this.#canvas = canvas;
+        this.#context = canvas.getContext("2d");
+        this.#delta = 1 / 60;
+}*/
+
+/*this.#nativeWidth = nativeWidth;
+        this.#nativeHeight = nativeHeight;
+        this.#minScale = minScale;
+        this.#maxScale = maxScale;
+        this.#scaleWidth = undefined;
+        this.#scaleHeight = undefined;
+        this.#mouse = new Mouse();
+        this.#keyboard = new Keyboard();
+        this.#spriteSheet = new SpriteSheet(imagePath);
+        window.onresize = this.#handleResize.bind(this);
+        this.#initSpriteSheet(this._spriteSheet);
+        this.#handleResize();*/
+/* #nativeWidth;
     #nativeHeight;
     #minScale;
     #maxScale;
@@ -11,24 +55,9 @@ class Game {
     #keyboard;
     #delta;
     #spriteSheet;
-    constructor(canvas, nativeWidth, nativeHeight, minScale, maxScale, imagePath) {
-        this.#canvas = canvas;
-        this.#context = canvas.getContext("2d");
-        this.#nativeWidth = nativeWidth;
-        this.#nativeHeight = nativeHeight;
-        this.#minScale = minScale;
-        this.#maxScale = maxScale;
-        this.#scaleWidth = undefined;
-        this.#scaleHeight = undefined;
-        this.#mouse = new Mouse();
-        this.#keyboard = new Keyboard();
-        this.#delta = 1 / 60;
-        this.#spriteSheet = new SpriteSheet(imagePath);
-        window.onresize = this.#handleResize.bind(this);
-        this.#initSpriteSheet(this._spriteSheet);
-        this.#handleResize();
-    }
-    #initSpriteSheet(spriteSheet) {
+    */
+
+/*#initSpriteSheet(spriteSheet) {
         spriteSheet.addSrcRect("gameBackground", Vector2.zero, 564, 406);
         spriteSheet.addSrcRect("highScoreBackground", new Vector2(564, 0), 564, 406);
         spriteSheet.addSrcRect("mainMenuBackground", new Vector2(0, 406), 564, 406);
@@ -145,9 +174,9 @@ class Game {
         this.#scaleWidth = this.#canvas.width / this.#nativeWidth;
         this.#scaleHeight = this.#canvas.height / this.#nativeHeight;
     }
-}
+}*/
 
-function Game(canvas, nativeWidth, nativeHeight, minScale, maxScale, imagePath) {
+/*function Game(canvas, nativeWidth, nativeHeight, minScale, maxScale, imagePath) {
     this.sprite = new Button(this._spriteSheet.image, this._spriteSheet.getSrcRect("mainMenuBackground"), new Vector2(0, 0));
     this.gameLoop();
 }
@@ -188,3 +217,4 @@ Object.defineProperties(Game.prototype, {
         },
     },
 });
+*/
