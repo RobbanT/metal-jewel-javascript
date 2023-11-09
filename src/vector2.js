@@ -13,12 +13,12 @@ class Vector2 {
         return this.#x;
     }
 
-    get y() {
-        return this.#y;
-    }
-
     set x(x) {
         this.#x = x;
+    }
+
+    get y() {
+        return this.#y;
     }
 
     set y(y) {

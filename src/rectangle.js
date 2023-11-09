@@ -14,36 +14,36 @@ class Rectangle extends Vector2 {
         return this.#width;
     }
 
-    get height() {
-        return this.#height;
-    }
-
     set width(width) {
         this.#width = width;
+    }
+
+    get height() {
+        return this.#height;
     }
 
     set height(height) {
         this.#height = height;
     }
 
-    top() {
-        return this.y();
+    get top() {
+        return this.y;
     }
 
-    right() {
-        return this.x() + this.#width;
+    get right() {
+        return this.x + this.#width;
     }
 
-    bottom() {
-        return this.y() + this.#height;
+    get bottom() {
+        return this.y + this.#height;
     }
 
-    left() {
-        return this.x();
+    get left() {
+        return this.x;
     }
 
     contains(vector2) {
-        return vector2.x() >= this.left() && vector2.x() <= this.right && vector2.y() >= this.top && vector2.y() <= this.bottom;
+        return vector2.x >= this.left && vector2.x <= this.right && vector2.y >= this.top && vector2.y <= this.bottom;
     }
 
     intersects(rectangle) {
