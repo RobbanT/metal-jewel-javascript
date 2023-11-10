@@ -14,6 +14,13 @@ class Game {
         this.#context.clearRect(0, 0, this.#canvas.width, this.#canvas.height);
     }
 
+    #drawImage(sprite, position) {
+        this.#context.save();
+        this.#context.translate(position.x, position.y);
+        this.#context.drawImage(sprite, 0, 0, sprite.width, sprite.height, 0, 0, sprite.width, sprite.height);
+        this.#context.restore();
+    }
+
     #update() {}
 
     #draw() {}

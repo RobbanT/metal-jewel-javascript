@@ -201,3 +201,11 @@ Object.defineProperties(Keyboard.prototype, {
         },
     },
 });
+
+/* 
+function handleMouseMove(evt) {
+    Game.mousePosition = { x : evt.pageX, y : evt.pageY };
+}
+    document.onmousemove = handleMouseMove;
+
+*/
