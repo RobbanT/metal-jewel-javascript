@@ -1,1 +1,1 @@
-document.addEventListener("DOMContentLoaded", new Game(document.getElementsByTagName("canvas").item(0)));
+document.addEventListener("DOMContentLoaded", new Game("gameCanvas"));
