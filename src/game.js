@@ -1,17 +1,11 @@
 class Game {
-    #canvas;
-    #context;
+    #canvas2D;
     #delta;
 
-    constructor(canvas) {
-        this.#canvas = canvas;
-        this.#context = canvas.getContext("2d");
+    constructor(canvasId) {
+        this.#canvas2D = new Canvas2D(canvasId);
         this.#delta = 1000 / 60;
         this.#runGameLoop;
-    }
-
-    #clearCanvas() {
-        this.#context.clearRect(0, 0, this.#canvas.width, this.#canvas.height);
     }
 
     #drawImage(sprite, position) {
