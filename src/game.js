@@ -1,28 +1,30 @@
+"use strict";
+
 class Game {
     #canvas2D;
     #delta;
+    #mouse;
+    #keyboard;
+    #touch;
 
     constructor(canvasId) {
         this.#canvas2D = new Canvas2D(canvasId);
         this.#delta = 1000 / 60;
-        this.#runGameLoop;
-    }
-
-    #drawImage(sprite, position) {
-        this.#context.save();
-        this.#context.translate(position.x, position.y);
-        this.#context.drawImage(sprite, 0, 0, sprite.width, sprite.height, 0, 0, sprite.width, sprite.height);
-        this.#context.restore();
+        this.#mouse = new Mouse();
+        this.#keyboard = new Keyboard();
+        this.#loopGame();
     }
 
     #update() {}
 
-    #draw() {}
+    #draw() {
+        this.#canvas2D.clear();
+    }
 
-    #runGameLoop() {
-        this.#clearCanvas();
+    #loopGame() {
         this.#update();
         this.#draw();
+        this.#mouse.reset();
         window.setTimeout(runGameLoop, this.#delta);
     }
 }

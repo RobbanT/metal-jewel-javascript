@@ -1,14 +1,18 @@
+"use strict";
+
 class Mouse {
     #position;
     #leftDown;
     #middleDown;
     #rightDown;
     #buttons;
+    #leftPressed;
 
     constructor() {
         this.#position = new Vector2();
         this.#leftDown = false;
         this.#rightDown = false;
+        this.#leftPressed = false;
         this.#buttons = {
             Left: 0,
             Middle: 1,
